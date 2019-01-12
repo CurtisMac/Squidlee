@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start"
   },
-  "author": "",
+  "author": "CurtisM",
   "license": "ISC",
   "dependencies": {
     "next": "^7.0.2",
