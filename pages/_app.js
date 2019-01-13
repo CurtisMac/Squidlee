@@ -1,5 +1,5 @@
 import App, { Container } from "next/app";
-import Header from "../components/Header";
+import Header from "../components/layout/Header";
 
 class MyApp extends App {
   render() {
