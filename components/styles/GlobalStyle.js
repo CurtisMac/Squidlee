@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Normalize } from "styled-normalize";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -9,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
 const GlobalStyle = () => {
   return (
     <React.Fragment>
+      <Normalize />
       <GlobalStyles />
     </React.Fragment>
   );
