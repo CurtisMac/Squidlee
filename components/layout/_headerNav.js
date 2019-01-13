@@ -1,18 +1,19 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const MainNav = styled.nav`
+const StyledNav = styled.nav`
   color: red;
+  font-size: 20px;
 `;
 
 class Nav extends React.Component {
   render() {
     return (
-      <nav>
+      <StyledNav>
         <Link href="/">
           <a>Home</a>
         </Link>
-      </nav>
+      </StyledNav>
     );
   }
 }

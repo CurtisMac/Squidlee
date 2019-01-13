@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 //Components
-import Nav from "./Nav";
+import Nav from "./_headerNav";
 
 const StyledHeader = styled.header`
   background-color: blue;
