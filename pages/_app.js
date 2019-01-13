@@ -1,13 +1,14 @@
 import App, { Container } from "next/app";
-import Header from "../components/layout/Header";
+import Layout from "../components/layout/Layout";
 
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <Header />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }
