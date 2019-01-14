@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Nav from "./_headerNav";
 
 const StyledHeader = styled.header`
-  background-color: ${props => props.theme.fg};
+  background-color: ${props => props.theme.purpleDark};
 `;
 
 const Header = () => {
