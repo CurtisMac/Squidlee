@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout/Layout";
 import GlobalStyle from "../components/styles/GlobalStyle";
-import MainTheme from "../components/styles/Themes";
+import { MainTheme } from "../components/styles/Themes";
 
 class MyApp extends App {
   render() {

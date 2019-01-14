@@ -1,6 +1,6 @@
-const theme = {
+const MainTheme = {
   bg: "lightGrey",
   fg: "#BADA55"
 };
 
-export default theme;
+export { MainTheme };
