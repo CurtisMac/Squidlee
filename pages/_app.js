@@ -1,7 +1,7 @@
 import App, { Container } from "next/app";
 import { ThemeProvider } from "styled-components";
 
-import Layout from "../components/layout/Layout";
+import Layout from "../components/Layout";
 import GlobalStyle from "../components/styles/GlobalStyle";
 import { MainTheme } from "../components/styles/Themes";
 
