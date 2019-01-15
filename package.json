@@ -1,6 +1,6 @@
 {
   "name": "squidlee_web_next",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Squidlee eCommerce",
   "main": "index.js",
   "scripts": {
