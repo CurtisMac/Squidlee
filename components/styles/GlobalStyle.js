@@ -3,7 +3,7 @@ import { Normalize } from "styled-normalize";
 
 const GlobalStyles = createGlobalStyle`
   body {
-    background-color: ${props => props.theme.purple};
+    background-color: ${props => props.theme.primary};
   }
 `;
 
