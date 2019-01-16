@@ -8,10 +8,10 @@ class Nav extends React.Component {
   render() {
     return (
       <StyledNav>
-        <Link href="/">
+        <Link href="/login">
           <StyledButton bgColor={"green"}>Login</StyledButton>
         </Link>
-        <Link href="/">
+        <Link href="/signup">
           <StyledButton bgColor={"blue"} solid>
             Signup
           </StyledButton>
