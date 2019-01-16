@@ -2,30 +2,31 @@ import React from "react";
 import styled from "styled-components";
 
 //components
-import HeaderNav from "./HeaderNav";
+import Nav from "./Nav";
+import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <StyledHeader>
-      <Title>LOGO</Title>
-      <NavContainer />
-    </StyledHeader>
+    <FlexContainer>
+      <FlexChild>
+        <Logo />
+      </FlexChild>
+      <FlexChild>
+        <Nav />
+      </FlexChild>
+    </FlexContainer>
   );
 };
 
 //styles
-const StyledHeader = styled.header`
+const FlexContainer = styled.header`
   background: transparent;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 `;
 
-const Title = styled.h1`
-  padding: 10px;
-  margin: 0 0 20px 0;
-  color: coral;
-`;
-
-const NavContainer = styled(HeaderNav)`
+const FlexChild = styled.div`
   /* flex styles */
 `;
 

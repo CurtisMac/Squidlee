@@ -7,7 +7,7 @@ import StyledButton from "../styles/StyledButton";
 class Nav extends React.Component {
   render() {
     return (
-      <StyledNav className={this.props.className}>
+      <StyledNav>
         <Link href="/">
           <StyledButton bgColor={"green"}>Login</StyledButton>
         </Link>
