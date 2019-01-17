@@ -1,4 +1,5 @@
 const MainTheme = {
+  //gradient: "linear-gradient(red, yellow)",
   //Primary colors
   primaryLighter: "#8952CB",
   primaryLight: "#6D449F",
@@ -22,15 +23,12 @@ const MainTheme = {
   complementLight: "#EADF58",
   complement: "#FFEC10",
   complementDark: "#BEB122",
-  complementDarker: "#B4A609"
+  complementDarker: "#B4A609",
+  get gradient() {
+    return `linear-gradient(to bottom right, ${this.primaryDarker}, ${
+      this.primary
+    })`;
+  }
 };
 
 export { MainTheme };
-
-const old = {
-  primaryLighter: "#9576AB",
-  primaryLight: "#734C8F",
-  primary: "#542B72",
-  primaryDark: "#3A1356",
-  primaryDarker: "#230439"
-};
