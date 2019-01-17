@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 
 //components
 import StyledButton from "../styles/StyledButton";
@@ -9,11 +9,8 @@ class Nav extends React.Component {
     return (
       <StyledNav>
         <Link href="/login">
-          <StyledButton bgColor={"green"}>Login</StyledButton>
-        </Link>
-        <Link href="/signup">
-          <StyledButton bgColor={"blue"} solid>
-            Signup
+          <StyledButton bgColor={this.props.theme.complement}>
+            Login
           </StyledButton>
         </Link>
       </StyledNav>
@@ -27,4 +24,4 @@ const StyledNav = styled.nav`
   font-size: 1.3rem;
 `;
 
-export default Nav;
+export default withTheme(Nav);

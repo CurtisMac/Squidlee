@@ -1,5 +1,6 @@
 const MainTheme = {
-  //gradient: "linear-gradient(red, yellow)",
+  //Text colors
+  textBody: "white",
   //Primary colors
   primaryLighter: "#8952CB",
   primaryLight: "#6D449F",
