@@ -21,7 +21,9 @@ class Nav extends React.Component {
 //styles
 const StyledNav = styled.nav`
   color: red;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  padding: 2px;
+  margin: 10px;
 `;
 
 export default withTheme(Nav);
