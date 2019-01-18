@@ -9,7 +9,7 @@ const login = () => {
     <React.Fragment>
       <Head title={"Login"} />
       <Container>
-        <Header />
+        <Header noNav />
         <main>
           <LoginForm />
         </main>

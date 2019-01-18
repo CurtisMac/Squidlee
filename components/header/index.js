@@ -4,16 +4,19 @@ import styled from "styled-components";
 //components
 import Nav from "./Nav";
 import Logo from "./Logo";
+import { normalize } from "path";
 
-const Header = () => {
+const Header = props => {
   return (
-    <FlexContainer>
+    <FlexContainer {...props}>
       <FlexChild>
         <Logo />
       </FlexChild>
-      {/* <FlexChild>
-        <Nav />
-      </FlexChild> */}
+      {!props.noNav && (
+        <FlexChild>
+          <Nav />
+        </FlexChild>
+      )}
     </FlexContainer>
   );
 };
@@ -23,7 +26,7 @@ const FlexContainer = styled.header`
   background: transparent;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: ${props => (props.noNav ? "center" : "space-between")};
 `;
 
 const FlexChild = styled.div`
