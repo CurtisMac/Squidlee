@@ -5,17 +5,17 @@ import styled from "styled-components";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <React.Fragment>
       <Head />
       <Header />
       <Main>{children}</Main>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 
 const Main = styled.main`
-  height: 100vh;
+  height: 80vh;
 `;
 
 export default Layout;

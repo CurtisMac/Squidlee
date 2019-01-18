@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import Layout from "../components/Layout";
 
 const Home = () => {
   return (
-    <div>
+    <Layout>
       <StyledH1>Hi! This is the home page</StyledH1>
-    </div>
+    </Layout>
   );
 };
 
