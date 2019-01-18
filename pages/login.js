@@ -1,7 +1,12 @@
-import React from "react";
-
+import Layout from "../components/Layout";
+import LoginForm from "../components/loginForm/index";
+import styled from "styled-components";
 const login = () => {
-  return <div>Login in from here!</div>;
+  return (
+    <Layout>
+      <LoginForm />
+    </Layout>
+  );
 };
 
 export default login;
