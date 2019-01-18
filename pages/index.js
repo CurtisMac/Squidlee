@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Layout from "../components/Layout";
 
 import { default as Head } from "../components/Meta";
 import Header from "../components/header/index";
