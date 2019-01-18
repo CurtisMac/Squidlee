@@ -11,9 +11,9 @@ const Header = () => {
       <FlexChild>
         <Logo />
       </FlexChild>
-      <FlexChild>
+      {/* <FlexChild>
         <Nav />
-      </FlexChild>
+      </FlexChild> */}
     </FlexContainer>
   );
 };
