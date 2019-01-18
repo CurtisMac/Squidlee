@@ -13,9 +13,7 @@ class MyApp extends App {
         <ThemeProvider theme={MainTheme}>
           <React.Fragment>
             <GlobalStyle />
-            {/* <Layout> */}
             <Component {...pageProps} />
-            {/* </Layout> */}
           </React.Fragment>
         </ThemeProvider>
       </Container>
