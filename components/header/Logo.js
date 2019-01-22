@@ -15,9 +15,6 @@ const Title = styled.h1`
   margin: 10px 10px 5px;
   color: ${props => props.theme.secondary};
   cursor: pointer;
-  ${media.phone`
-    color: green;
-  `}
 `;
 
 export default Logo;

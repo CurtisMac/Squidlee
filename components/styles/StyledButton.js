@@ -10,7 +10,7 @@ const StyledButton = styled.button`
       ? props.txtColor
       : props.bgColor || props.theme.primary};
   border: 2px solid ${props => props.bgColor || props.theme.primary};
-  border-radius: 3px;
+  border-radius: 5px;
   margin: 0.5rem;
   padding: 0.25em 1em;
   cursor: pointer;

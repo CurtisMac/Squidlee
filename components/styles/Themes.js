@@ -1,4 +1,6 @@
 const MainTheme = {
+  //Error color
+  error: "#dd0000",
   //Text colors
   textBody: "white",
   //Primary colors
