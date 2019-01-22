@@ -161,7 +161,11 @@ const signupForm = () => {
               </StyledErrorContainer>
             </CheckboxContainer>
 
-            <SubmitButton type="submit" disabled={isSubmitting}>
+            <SubmitButton
+              type="submit"
+              disabled={isSubmitting}
+              bgColor={"complement"}
+            >
               {isSubmitting ? <Loader color={"complementLight"} /> : "Submit"}
             </SubmitButton>
           </FlexForm>
@@ -250,9 +254,7 @@ const StyledPasswordMessage = styled.div`
   color: ${props => props.theme.complement};
 `;
 
-const SubmitButton = styled(StyledButton).attrs(props => ({
-  bgColor: props.theme.complement
-}))`
+const SubmitButton = styled(StyledButton)`
   font-size: 1.2rem;
   margin: 10px 0;
 `;

@@ -9,9 +9,7 @@ class Nav extends React.Component {
     return (
       <StyledNav>
         <Link href="/login">
-          <StyledButton bgColor={this.props.theme.complement}>
-            Login
-          </StyledButton>
+          <StyledButton bgColor={"complement"}>Login</StyledButton>
         </Link>
       </StyledNav>
     );
