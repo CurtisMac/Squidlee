@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Formik, Field, ErrorMessage } from "formik";
 import styled from "styled-components";
 
@@ -166,6 +167,14 @@ const signupForm = () => {
           </FlexForm>
         )}
       </Formik>
+      <LoginLink>
+        <p>
+          Already have an account?
+          <Link href="/login">
+            <StyledLink> Login</StyledLink>
+          </Link>
+        </p>
+      </LoginLink>
     </div>
   );
 };
@@ -216,12 +225,6 @@ const StyledCheckboxContainer = styled.div`
   margin: 5px 0;
 `;
 
-const StyledCheckbox = styled.input`
-  cursor: pointer;
-  height: 1rem;
-  width: 1rem;
-`;
-
 const StyledLabel = styled.label`
   margin-left: 10px;
 `;
@@ -252,6 +255,16 @@ const SubmitButton = styled(StyledButton).attrs(props => ({
 }))`
   font-size: 1.2rem;
   margin: 10px 0;
+`;
+
+const LoginLink = styled.div`
+  color: ${props => props.theme.textBody};
+  font-size: 1.1rem;
+  text-align: center;
+`;
+const StyledLink = styled.a`
+  color: ${props => props.theme.complement};
+  cursor: pointer;
 `;
 
 //Development helper functions
