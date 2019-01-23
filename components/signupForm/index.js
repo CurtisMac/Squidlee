@@ -6,6 +6,7 @@ import styled from "styled-components";
 import validationSchema from "./validationScheme";
 import StyledButton from "../styles/StyledButton";
 import Loader from "../modules/Loader";
+import createUser from "../../firebase/createUser";
 
 const signupForm = () => {
   return (
@@ -23,18 +24,19 @@ const signupForm = () => {
         }}
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
-          serverSimulation({ email: values.email })
-            .then(() => {
-              //Give success message and then redirect to login page
-              alert("Success!");
-            })
-            .catch(e => {
-              alert(e);
-              //Give error message and then redirect as appropriate
-            })
-            .finally(() => {
-              actions.resetForm();
-            });
+          createUser(values.email, values.password);
+          // serverSimulation({ email: values.email })
+          //   .then(() => {
+          //     //Give success message and then redirect to login page
+          //     alert("Success!");
+          //   })
+          //   .catch(e => {
+          //     alert(e);
+          //     //Give error message and then redirect as appropriate
+          //   })
+          //   .finally(() => {
+          //     actions.resetForm();
+          //   });
         }}
       >
         {({ handleSubmit, isSubmitting, errors, touched, values }) => (

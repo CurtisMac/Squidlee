@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
+//import 'firebase/firestore'
 
 const config = {
   apiKey: process.env.apiKey,
@@ -9,7 +11,9 @@ const config = {
   messagingSenderId: process.env.messagingSenderId
 };
 
-const firebaseApp = firebase.initializeApp(config);
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
+// firebase.firestore().settings({ timestampsInSnapshots: true });
 
-export default firebaseApp;
-q;
+export default firebase;
