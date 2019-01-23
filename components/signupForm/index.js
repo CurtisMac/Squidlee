@@ -4,9 +4,9 @@ import { Formik, Field, ErrorMessage } from "formik";
 import styled from "styled-components";
 
 import validationSchema from "./validationScheme";
+import createUser from "../../firebase/createUser";
 import StyledButton from "../styles/StyledButton";
 import Loader from "../modules/Loader";
-import createUser from "../../firebase/createUser";
 
 const signupForm = () => {
   return (
@@ -24,19 +24,25 @@ const signupForm = () => {
         }}
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
-          createUser(values.email, values.password);
-          // serverSimulation({ email: values.email })
-          //   .then(() => {
-          //     //Give success message and then redirect to login page
-          //     alert("Success!");
-          //   })
-          //   .catch(e => {
-          //     alert(e);
-          //     //Give error message and then redirect as appropriate
-          //   })
-          //   .finally(() => {
-          //     actions.resetForm();
-          //   });
+          createUser(
+            values.email,
+            values.password,
+            values.firstName,
+            values.lastName,
+            values.agreeToPrivacyPolicyAndTerms,
+            values.joinMailingList
+          )
+            .then(response => {
+              //open module with success message and redirect to user dashboard
+              alert(response);
+            })
+            .catch(error => {
+              //test if error is duplicate email, open module and offer another chance to sign up or a redirct to the login page
+              alert(error);
+            })
+            .finally(() => {
+              actions.resetForm();
+            });
         }}
       >
         {({ handleSubmit, isSubmitting, errors, touched, values }) => (
@@ -192,36 +198,30 @@ const FlexForm = styled.form`
   margin: 0 auto;
   padding: 1.5rem;
 `;
-
 const FlexRowContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
 `;
-
 const StyledTitle = styled.h2`
   color: ${props => props.theme.textBody};
   text-align: center;
   margin: 5px 0 10px 0;
 `;
-
 const StyledInput = styled(Field)`
   padding: 7px;
   margin: 0;
   border: 2px solid ${props => (props.error ? props.theme.error : "grey")};
   border-radius: 5px;
 `;
-
 const StyledNameInput = styled(StyledInput)`
   width: 50%;
   :first-child {
     margin-right: 1rem;
   }
 `;
-
 const CheckboxContainer = styled.div`
   margin-top: 0.5rem;
 `;
-
 const StyledCheckboxContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -230,37 +230,30 @@ const StyledCheckboxContainer = styled.div`
   font-size: 0.95rem;
   margin: 5px 0;
 `;
-
 const StyledLabel = styled.label`
   margin-left: 10px;
 `;
-
 const StyledErrorContainer = styled.div`
   height: 1.5rem;
 `;
-
 const StyledNameErrorContainer = styled(StyledErrorContainer)`
   width: 50%;
   :last-child {
     margin-left: 1rem;
   }
 `;
-
 const StyledErrorMessage = styled.div`
   padding: 0.02rem 0 0 0.25rem;
   color: ${props => props.theme.error};
 `;
-
 const StyledPasswordMessage = styled.div`
   padding: 0.2rem 0 0 0;
   color: ${props => props.theme.complement};
 `;
-
 const SubmitButton = styled(StyledButton)`
   font-size: 1.2rem;
   margin: 10px 0;
 `;
-
 const LoginLink = styled.div`
   color: ${props => props.theme.textBody};
   font-size: 1.1rem;
@@ -270,18 +263,5 @@ const StyledLink = styled.a`
   color: ${props => props.theme.complement};
   cursor: pointer;
 `;
-
-//Development helper functions
-const serverSimulation = ({ email }) =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (email === "a@a.com") {
-        reject(
-          new Error(`There is already an account associated with ${email}.`)
-        );
-      }
-      resolve(true);
-    }, 4000);
-  });
 
 export default signupForm;
