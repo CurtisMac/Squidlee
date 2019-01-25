@@ -16,7 +16,7 @@ class Nav extends React.Component {
           bgColor={"complement"}
           onClick={() => {
             logout().then(r => {
-              console.log(r);
+              // console.log(r);
             });
           }}
         >
