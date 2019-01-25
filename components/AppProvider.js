@@ -2,7 +2,7 @@ import authStateListener from "../firebase/authStateListener";
 
 import { auth } from "../firebase/firebaseInit";
 
-class UserProvider extends React.Component {
+class AppProvider extends React.Component {
   state = {
     loggedIn: false,
     user: "Curtis Bob",
@@ -29,7 +29,7 @@ class UserProvider extends React.Component {
 
   render() {
     return (
-      <UserContext.Provider
+      <AppContext.Provider
         value={{
           state: this.state,
           update: (key, value) =>
@@ -39,10 +39,10 @@ class UserProvider extends React.Component {
         }}
       >
         {this.props.children}
-      </UserContext.Provider>
+      </AppContext.Provider>
     );
   }
 }
 
-export const UserContext = React.createContext();
-export default UserProvider;
+export const AppContext = React.createContext();
+export default AppProvider;
