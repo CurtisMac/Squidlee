@@ -12,6 +12,9 @@ const createUser = (
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(response => {
+        response.user.updateProfile({
+          displayName: `${firstName} ${lastName.slice(0, 1).toUpperCase()}`
+        });
         db.collection("users")
           .doc(response.user.uid)
           .set({
