@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled, { withTheme } from "styled-components";
+import logout from "../../firebase/logout";
 
 //components
 import StyledButton from "../styles/StyledButton";
@@ -11,6 +12,16 @@ class Nav extends React.Component {
         <Link href="/login">
           <StyledButton bgColor={"complement"}>Login</StyledButton>
         </Link>
+        <StyledButton
+          bgColor={"complement"}
+          onClick={() => {
+            logout().then(r => {
+              console.log(r);
+            });
+          }}
+        >
+          Logout
+        </StyledButton>
       </StyledNav>
     );
   }
