@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import validationSchema from "./validationSchema";
 import StyledButton from "../styles/StyledButton";
+import login from "../../firebase/login";
 
 const LoginForm = () => (
   <React.Fragment>
@@ -11,9 +12,15 @@ const LoginForm = () => (
       initialValues={{ email: "", password: "" }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(`hi ${values}`), actions.resetForm();
-        }, 1000);
+        login(values.email, values.password)
+          .then(s => {
+            if (s) {
+              //should redirect to user dashboard
+              alert("success");
+            }
+          })
+          .catch(e => alert(e))
+          .finally(() => actions.resetForm());
       }}
     >
       {({ handleSubmit, isSubmitting, errors, touched }) => (
