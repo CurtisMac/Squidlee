@@ -1,21 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { AppContext } from "../AppProvider";
 
-//components
-import Nav from "./Nav";
 import Logo from "./Logo";
-import { normalize } from "path";
+import NavSignedIn from "./NavSignedIn";
+import NavSignedOut from "./NavSignedOut";
 
 const Header = props => {
   return (
     <FlexContainer {...props}>
-      <FlexChild>
+      <div>
         <Logo />
-      </FlexChild>
+      </div>
       {!props.noNav && (
-        <FlexChild>
-          <Nav />
-        </FlexChild>
+        <div>
+          <AppContext.Consumer>
+            {value =>
+              value.state.user ? (
+                <NavSignedIn user={value.state.user} />
+              ) : (
+                <NavSignedOut />
+              )
+            }
+          </AppContext.Consumer>
+        </div>
       )}
     </FlexContainer>
   );
@@ -27,10 +35,6 @@ const FlexContainer = styled.header`
   display: flex;
   flex-flow: row wrap;
   justify-content: ${props => (props.noNav ? "center" : "space-between")};
-`;
-
-const FlexChild = styled.div`
-  /* flex styles */
 `;
 
 export default Header;
