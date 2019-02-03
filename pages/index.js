@@ -26,7 +26,7 @@ const StyledH1 = styled.h1`
   color: ${props => props.theme.textBody};
 `;
 const Main = styled.main`
-  height: 85vh;
+  height: 90vh;
 `;
 
 export default Home;

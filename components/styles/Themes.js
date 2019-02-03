@@ -3,6 +3,8 @@ const MainTheme = {
   error: "#dd0000",
   //Text colors
   textBody: "white",
+  textLight: "white",
+  textDark: "black",
   //Primary colors
   primaryLighter: "#8952CB",
   primaryLight: "#6D449F",

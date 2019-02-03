@@ -29,10 +29,9 @@ const Header = props => {
   );
 };
 
-//styles
 const FlexContainer = styled.header`
-  /* background: transparent; */
-  background: ${props => props.theme.gradient};
+  background: ${props =>
+    props.whiteBackground ? props.theme.gradient : "transparent"};
   display: flex;
   flex-flow: row nowrap;
   justify-content: ${props => (props.noNav ? "center" : "space-between")};

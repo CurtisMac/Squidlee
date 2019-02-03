@@ -3,8 +3,7 @@ import { Normalize } from "styled-normalize";
 
 const GlobalStyles = createGlobalStyle`
   body {
-    /* background-image: ${props => props.theme.gradient}; */
-    background-color: white
+    background-image: ${props => props.theme.gradient};
   }
 `;
 
