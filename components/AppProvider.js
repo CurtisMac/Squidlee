@@ -1,11 +1,9 @@
 import authStateListener from "../firebase/authStateListener";
 
-import { auth } from "../firebase/firebaseInit";
-
 class AppProvider extends React.Component {
   state = {
     loggedIn: false,
-    user: "Curtis Bob",
+    user: "",
     uid: ""
   };
 
