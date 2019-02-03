@@ -31,9 +31,10 @@ const Header = props => {
 
 //styles
 const FlexContainer = styled.header`
-  background: transparent;
+  /* background: transparent; */
+  background: ${props => props.theme.gradient};
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: ${props => (props.noNav ? "center" : "space-between")};
 `;
 

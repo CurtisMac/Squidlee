@@ -8,20 +8,25 @@ const Home = () => {
   return (
     <React.Fragment>
       <Head title={"Squidlee"} />
-      <Header />
-      <Main>
-        <StyledH1>Hi! This is the home page</StyledH1>
-      </Main>
-      <Footer />
+      <Container>
+        <Header />
+        <Main>
+          <StyledH1>Hi! This is the home page</StyledH1>
+        </Main>
+        <Footer />
+      </Container>
     </React.Fragment>
   );
 };
 
+const Container = styled.div`
+  background: ${props => props.theme.gradient};
+`;
 const StyledH1 = styled.h1`
   color: ${props => props.theme.textBody};
 `;
 const Main = styled.main`
-  height: 80vh;
+  height: 85vh;
 `;
 
 export default Home;
