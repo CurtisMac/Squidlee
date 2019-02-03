@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import SearchBar from "../modules/SearchBar";
+
 class ProductsList extends Component {
   constructor(props) {
     super(props);
@@ -10,8 +12,12 @@ class ProductsList extends Component {
   }
 
   render() {
-    return <div />;
+    return <SpacedSearchBar />;
   }
 }
+
+const SpacedSearchBar = styled(SearchBar)`
+  margin: 20px;
+`;
 
 export default ProductsList;
