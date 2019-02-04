@@ -31,7 +31,7 @@ class SearchBar extends Component {
           onChange={this.handleInput}
           value={this.state.query}
         />
-        <Button>
+        <Button type="button">
           <SearchIcon
             xmlns="http://www.w3.org/2000/svg"
             width="24"
