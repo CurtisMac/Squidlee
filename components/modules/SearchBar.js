@@ -78,6 +78,11 @@ const Button = styled.button`
   border-radius: 0 20px 20px 0;
   padding: 0 20px;
   cursor: pointer;
+
+  :active {
+    background-image: ${props =>
+      `linear-gradient(${props.theme.primary}, ${props.theme.primaryLight})`};
+  }
 `;
 
 const SearchIcon = styled.svg`
