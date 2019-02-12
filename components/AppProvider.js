@@ -4,7 +4,9 @@ class AppProvider extends React.Component {
   state = {
     loggedIn: false,
     user: "",
-    uid: ""
+    uid: "",
+    region: "can",
+    catalog: {}
   };
 
   componentDidMount() {

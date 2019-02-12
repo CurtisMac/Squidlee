@@ -12,7 +12,6 @@
   "author": "CurtisM",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
     "dotenv": "^6.2.0",
     "firebase": "^5.8.0",
     "formik": "^1.4.2",
