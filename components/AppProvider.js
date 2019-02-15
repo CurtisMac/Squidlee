@@ -1,4 +1,5 @@
 import authStateListener from "../firebase/authStateListener";
+import getCatalogIndex from "../firebase/getCatalogIndex";
 
 class AppProvider extends React.Component {
   state = {
@@ -25,6 +26,7 @@ class AppProvider extends React.Component {
         });
       }
     });
+    getCatalogIndex();
   }
 
   render() {
