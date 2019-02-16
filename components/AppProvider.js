@@ -33,7 +33,6 @@ class AppProvider extends React.Component {
   getIndex() {
     getDoc("inventoryCanada", "categoryIndex")
       .then(index => {
-        console.log(index);
         this.setState({
           categories: index
         });
@@ -41,7 +40,7 @@ class AppProvider extends React.Component {
       .catch(e => {
         console.error(e);
         setTimeout(() => {
-          console.log("retrying"), this.getIndex();
+          console.warn("retrying getDoc"), this.getIndex();
         }, 1000);
       });
   }
