@@ -15,7 +15,7 @@
     "dotenv": "^6.2.0",
     "firebase": "^5.8.0",
     "formik": "^1.4.2",
-    "next": "^7.0.2",
+    "next": "^8.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "styled-components": "^4.1.3",
