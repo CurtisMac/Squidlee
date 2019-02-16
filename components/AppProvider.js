@@ -1,5 +1,5 @@
 import authStateListener from "../firebase/authStateListener";
-import getCatalogIndex from "../firebase/getCatalogIndex";
+import getDoc from "../firebase/getDoc";
 
 class AppProvider extends React.Component {
   state = {
@@ -7,7 +7,8 @@ class AppProvider extends React.Component {
     user: "",
     uid: "",
     region: "can",
-    catalog: {}
+    catalog: {},
+    categories: []
   };
 
   componentDidMount() {
@@ -26,7 +27,23 @@ class AppProvider extends React.Component {
         });
       }
     });
-    getCatalogIndex();
+    this.getIndex();
+  }
+
+  getIndex() {
+    getDoc("inventoryCanada", "categoryIndex")
+      .then(index => {
+        console.log(index);
+        this.setState({
+          categories: index
+        });
+      })
+      .catch(e => {
+        console.error(e);
+        setTimeout(() => {
+          console.log("retrying"), this.getIndex();
+        }, 1000);
+      });
   }
 
   render() {
