@@ -24,14 +24,14 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <FlexParent onSubmit={this.handleSubmit} className={this.props.className}>
+      <FlexParent className={this.props.className}>
         <Input
           type="text"
           placeholder="Search..."
           onChange={this.handleInput}
           value={this.state.query}
         />
-        <Button type="button">
+        <Button type="button" onClick={this.handleSubmit}>
           <SearchIcon
             xmlns="http://www.w3.org/2000/svg"
             width="24"
