@@ -1,10 +1,9 @@
-import React, { Component } from "react";
 import styled from "styled-components";
 
 import SearchBar from "../modules/SearchBar";
 import SelectionBar from "../modules/SelectionBar";
 
-class ProductsList extends Component {
+class ProductsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
