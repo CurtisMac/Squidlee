@@ -1,9 +1,8 @@
-import getCatalogIndex from "../getCatalogIndex";
-import * as firebase from "firebase";
+import getDoc from "../getDoc";
 // import { db } from "../firebaseInit";
 // jest.mock("../firebaseInit");
 
-test("Should fetch catalog", () => {
+test("Should fetch doc from fb", () => {
   // const index = [{ name: "canon", id: 47 }];
   // const fakeResponse = { data: index };
   // db.collection("fake")
@@ -11,7 +10,7 @@ test("Should fetch catalog", () => {
   //   .doc("fake")
   //   .get()
   //   .mockResolvedValue(fakeResponse);
-  return getCatalogIndex().then(response => {
+  return getDoc().then(response => {
     expect(response).toContain("canon");
   });
 });
