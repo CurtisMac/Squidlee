@@ -5,7 +5,7 @@ const getDoc = async (collection, doc) => {
 
   try {
     const doc = await docRef.get();
-    return JSON.parse(doc.data().data).data;
+    return doc.data();
   } catch (e) {
     throw `getDoc was unable to fetch data` + e;
   }
