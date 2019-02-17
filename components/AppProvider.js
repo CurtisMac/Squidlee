@@ -32,9 +32,9 @@ class AppProvider extends React.Component {
 
   getIndex() {
     getDoc("inventoryCanada", "categoryIndex")
-      .then(index => {
+      .then(doc => {
         this.setState({
-          categories: index
+          categories: JSON.parse(doc.data)
         });
       })
       .catch(e => {
